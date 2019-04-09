@@ -1,0 +1,49 @@
+Exploring and understanding TinyOS computational concepts: - Events, Commands and Task. - NesC model - nesC Components
+TinyOS is an embedded, component-based operating system and platform for low power wireless devices, such as those in wireless sensor networks (WSNs), Ubiquitous computing, personal area network, building automation, and smart meters. It is written in the programming language nesC, as a set of cooperating tasks and processes. It began as a collaboration between the University of California, Berkeley, Intel Research, and Crossbow Technology, was released as free and open-source software under a BSD license, and has since grown into an international consortium, the TinyOS Alliance
+* Well establish layer of abstractions
+*	Strict boundaries
+*	Ample Resources
+*	Independent apps at endpoints communicate point-point through routers
+*Highly constrained resources: Processing, Storage, Bandwidth, Power.
+*	Application spread over many small nodes
+-Self organizing collectives
+-Highly integrated with changing environment and network
+Concurrency intensive in stream of sensor data and network traffic Event driven architecture, single shared stack,
+No kernel, process/memory management, Virtual memory
+a.	can call commands, signal events, post tasks, cannot be signalled by commands.
+b.	Pre-emptive tasks.
+c.	interrupt trigger the lowest level events
+d.	deposit the information into the frame
+Commands:
+a.	deposit request parameters into the frame
+b.	are non-blocking
+c.	need to return status => postpone time consuming work by posting a task
+d.	can call lower level commands
+
+Tasks:
+•	FIFO scheduling
+•	non-pre-emptiable by other task, pre-emptiable by events
+•	perform computationally intensive work
+•	handling of multiple data flows:
+a.	a sequence of non-blocking command/event through the component graph
+b.	post task for computationally intensive work
+c.	Pre-emptive the running task, to handle new data
+NesC Introduction:
+A “holistic” approach to networked embedded systems
+?	Supports and reflects TinyOS's design
+?	Extends a subset of C
+?	A static language
+–	All resources known at compile-time
+–	Call-graph fully known at compile-time
+
+
+NesC Model
+Sensor Model: A sensor model S is a tuple S = (A, T, R, init, P) Where, A is a finite set of variables;
+T is a queue which stores posted tasks in FIFO order;
+NesC Components:
+?	Challenge: platform diversity, flexible Software/Hardware boundary, applications deeply tied to hardware
+?	Encourages modular design
+?	Restrict access to private data
+?	Allow underlying implementations to be replaced easily
+?	Can abstract Hardware using thin wrappers
+?	Allow specialization of applications to hardware

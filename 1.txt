@@ -1,0 +1,10 @@
+Aim: Understanding the Sensor Node Hardware. (For E.g. Sensors, Nodes (Sensor mote), Base Station, Graphical User Interface.)
+Procedure:
+Wireless sensor network that depicts components and the flow of information (data) from the sensor to the node, then to the base station computer, then to the Internet and last to any web-
+enabled computers or mobile devices. Wireless transmissions are depicted by dashed lines and wired connections are depicted By Solid lines.
+Components: A wireless sensor network (WSN) is a hardware and software package that typically consists of four parts
+A)	‘Sensors’ connected to each node by a wired connection. In our case, we use sensors that can measure soil moisture, electrical conductivity, soil temperature, water pressure, flow rate, or a range of weather variables (light, air temperature, wind, humidity, etc.).
+
+B)	‘Nodes’ collect the data from sensors & transmit that to a ‘base station’ computer using a one-way (in the case of monitoring) or two-­-way (in the case of monitoring and control) radio. Nodes can simply monitor environmental & soil conditions or can be used to make control decisions. For ex. some nodes have the capability to control an electric valve, such asan irrigation valve.
+C)	Base Station computer connect the system to the internet, so that data collected by the nodes, then transmitted to the base station computer, can be viewed anywhere an internet connection is available.
+D)	Graphical User Interfaces is the web-based software packaged, that allows the data collected by sensor to be viewed. The software is also used to set irrigation parameters.
